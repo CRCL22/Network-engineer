@@ -187,6 +187,7 @@ Unauthorized access is strictly prohibited. #*
 ```Для включения доступа к VTY```
 
 ##Шаг 2. Настройте IP-адрес на компьютере PC-A.
+
 ![Screenshot_2](https://user-images.githubusercontent.com/45486651/191271972-a8445581-41ad-4264-9362-73b988675813.jpg)
 
 #Часть 3. Проверка сетевых подключений
