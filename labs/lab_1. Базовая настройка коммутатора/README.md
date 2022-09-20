@@ -123,6 +123,7 @@ no ip address
 ```C2960-LANBASEK9-M```
 - Какой базовый MAC-адрес назначен коммутатору?
 ```Base ethernet MAC Address : 00:09:7C:C4:61:00```
+
 **h.** Изучите свойства по умолчанию интерфейса FastEthernet, который используется компьютером PC-A. Switch# show interface f0/6
 
 **Вопрос:**
