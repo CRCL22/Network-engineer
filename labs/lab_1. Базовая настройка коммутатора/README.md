@@ -191,3 +191,67 @@ Unauthorized access is strictly prohibited. #*
 ![Screenshot_2](https://user-images.githubusercontent.com/45486651/191271972-a8445581-41ad-4264-9362-73b988675813.jpg)
 
 # Часть 3. Проверка сетевых подключений
+
+## Шаг 1. Отобразите конфигурацию коммутатора.
+
+**a.** Пример конфигурации приведен ниже. Параметры, которые вы настроили, выделены желтым. Другие параметры конфигурации — значения IOS по умолчанию.
+
+
+service password-encryption
+hostname S1
+enable secret 5 $1$mtvC$6NC.1VKr3p6bj7YGE.jNg0
+!enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+![image](https://user-images.githubusercontent.com/45486651/191272967-1d8659ae-d6e1-4b7a-ba6b-6a004595d6c2.png)
+
+
+no ip domain-lookup
+![Screenshot_3](https://user-images.githubusercontent.com/45486651/191273331-5fc34805-5b95-4c48-a88b-d35a79c554f1.jpg)
+
+
+interface FastEthernet0/24
+ switchport access vlan 99
+![Screenshot_4](https://user-images.githubusercontent.com/45486651/191273535-4c63f014-6164-43b9-8e94-ff786c1c165a.jpg)
+
+interface GigabitEthernet0/1
+ switchport access vlan 99
+![Screenshot_5](https://user-images.githubusercontent.com/45486651/191273612-9aee2e88-0183-47da-8e51-45f5a64bb217.jpg)
+
+interface GigabitEthernet0/2
+ switchport access vlan 99
+![Screenshot_6](https://user-images.githubusercontent.com/45486651/191273699-8995302c-da56-49e7-b52f-d8f53f7704a1.jpg)
+
+interface Vlan1
+ ip address 192.168.1.2 255.255.255.0
+![Screenshot_7](https://user-images.githubusercontent.com/45486651/191273781-9007dbcd-f668-434b-a36a-6fd112b545ce.jpg)
+
+ip default-gateway 192.168.1.1
+![Screenshot_8](https://user-images.githubusercontent.com/45486651/191273877-7a69bc9d-5b27-43aa-a4c0-c471625a3e66.jpg)
+
+banner motd ^C
+Unauthorized access is strictly prohibited. ^C
+![Screenshot_9](https://user-images.githubusercontent.com/45486651/191273994-3fbc40b2-5bc7-4b14-8e9e-472c3bae69a0.jpg)
+
+ password 7 00071A150754
+ logging synchronous
+ login
+![Screenshot_10](https://user-images.githubusercontent.com/45486651/191274115-2f0ef9a9-0721-44fd-ba4d-fc945cbb7a64.jpg)
+
+line vty 0 4
+ password 7 121A0C041104
+ login
+ ![Screenshot_11](https://user-images.githubusercontent.com/45486651/191274236-aa7c8f2f-65b6-43fd-b2f2-7ea05e45cbad.jpg)
+
+
+line vty 5 15
+ password 7 121A0C041104
+ login
+![Screenshot_12](https://user-images.githubusercontent.com/45486651/191274313-654b55dd-fa76-439e-ab6b-b41c31446517.jpg)
+
+
+**b.** Проверьте параметры VLAN 1.
+- Какова полоса пропускания этого интерфейса?
+```BW 100000 Kbit```
+- В каком состоянии находится VLAN 1?
+```Vlan1 is up```
+- В каком состоянии находится канальный протокол?
+```line protocol is up```
