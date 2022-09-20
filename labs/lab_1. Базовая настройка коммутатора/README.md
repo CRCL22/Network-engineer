@@ -154,5 +154,39 @@ no ip address
 
 ![6](https://user-images.githubusercontent.com/45486651/191254752-b02f0705-fd40-440f-b118-ce71f1a35473.jpg)
 
+#Часть 2. Настройка базовых параметров сетевых устройств
 
+##Шаг 1. Настройте базовые параметры коммутатора.
 
+```Заменила имя коммутатору:
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#hostname S1
+S1(config)#
+```
+**a.** В режиме глобальной конфигурации скопируйте следующие базовые параметры конфигурации и вставьте их в файл на коммутаторе S1.
+*no ip domain-lookup
+hostname S1
+service password-encryption
+enable secret class
+banner motd #
+Unauthorized access is strictly prohibited. #*
+![01](https://user-images.githubusercontent.com/45486651/191270794-85604237-d86f-496f-b8df-3b280137fca4.jpg)
+
+**b.** Назначьте IP-адрес интерфейсу SVI на коммутаторе. 
+![02](https://user-images.githubusercontent.com/45486651/191271122-017011e3-6093-4de3-8590-decf6a1bd168.jpg)
+
+**c.** Доступ через порт консоли также следует ограничить с помощью пароля. 
+![03](https://user-images.githubusercontent.com/45486651/191271493-6d71a1dc-98af-449a-977a-332a14b97295.jpg)
+
+**d.** Настройте каналы виртуального соединения для удаленного управления (vty), чтобы коммутатор разрешил доступ через Telnet.
+![04](https://user-images.githubusercontent.com/45486651/191271673-2d42bae8-a56f-48d5-a835-f79ef5b1776d.jpg)
+
+**Вопрос:**
+- Для чего нужна команда login?
+```Для включения доступа к VTY```
+
+##Шаг 2. Настройте IP-адрес на компьютере PC-A.
+![Screenshot_2](https://user-images.githubusercontent.com/45486651/191271972-a8445581-41ad-4264-9362-73b988675813.jpg)
+
+#Часть 3. Проверка сетевых подключений
