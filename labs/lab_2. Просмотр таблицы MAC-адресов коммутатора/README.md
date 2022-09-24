@@ -27,6 +27,13 @@
 
 **c.	Назначьте cisco в качестве паролей консоли и VTY.**
 
+S1:
+![image](https://user-images.githubusercontent.com/45486651/192097268-aea1fc96-21cd-4f25-abef-ac96e497fcb8.png)
+
+S2:
+![image](https://user-images.githubusercontent.com/45486651/192097278-df86292a-2339-4b07-a1d6-4789d749798c.png)
+
+
 d.	Назначьте class в качестве пароля доступа к привилегированному режиму EXEC.
 Закройте окно настройки.
 Часть 2. Изучение таблицы МАС-адресов коммутатора
